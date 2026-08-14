@@ -1,0 +1,9 @@
+@'
+node_modules/
+api/node_modules/
+web/node_modules/
+.env
+api/.env
+web/.env
+dist/
+'@ | Set-Content -Path .gitignore
