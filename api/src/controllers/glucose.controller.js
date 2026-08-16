@@ -11,6 +11,18 @@ module.exports.list = async (req, res, next) => {
   }
 };
 
+module.exports.create = async (req, res, next) => {
+  try {
+    const glucose = await Glucose.create({
+      ...req.body,
+      user: req.user.id,
+    });
+    res.status(201).json(glucose);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports.detail = async (req, res, next) => {
   try {
     const { id } = req.params;
