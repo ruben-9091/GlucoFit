@@ -25,7 +25,7 @@ const glucoseSchema = new Schema(
       maxLength: [200, "La nota debe contener como maximo 200 caracteres"],
       trim: true,
     },
-    owner: {
+    user: {
       type: Schema.Types.ObjectId,
       required: true,
       ref: "User",
