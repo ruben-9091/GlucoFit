@@ -1,6 +1,6 @@
 {
-  "name": "api",
-  "version": "1.0.0",
+  "name": "gluco-fit-api",
+  "version": "0.0.1",
   "description": "",
   "license": "ISC",
   "author": "",
@@ -12,6 +12,7 @@
     "seeds": "node bin/seeds.js"
   },
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "react-router-dom": "^7.18.2"
   }
