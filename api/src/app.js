@@ -1,5 +1,21 @@
 const express = require("express");
+const loggerHttp = require("pino-http");
+const logger = require("./lib/logger");
+const config = require("./lib/config");
+const apiRouter = require("./controllers");
+const session = require("./lib/session");
 
-const app = express(); 
+require("./lib/db");
 
-app.listen(3000, () => console.log(`Application listen at port 3000`));
+const app = express();
+
+app.use(loggerHttp({ logger }));
+app.use(express.json());
+
+app.use(session);
+
+app.use("/api/v0", apiRouter);
+
+app.listen(config.get("port"), () =>
+  logger.info(`Application listen at port ${config.get("port")}`),
+);
