@@ -1,4 +1,4 @@
-import http from "../api-service/api-service";
+import { http } from "../api-service/api-service";
 
 export async function listGlucose() {
   const data = await http.get("/glucose");

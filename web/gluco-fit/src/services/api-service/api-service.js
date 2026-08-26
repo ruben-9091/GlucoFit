@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LS_USER_KEY } from '../contexts/auth-context';
+import { LS_USER_KEY } from '../../context/auth-context';
 
 export const http = axios.create({
   baseURL: import.meta.env.VITE_BASE_API_URL,
