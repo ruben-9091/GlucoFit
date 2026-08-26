@@ -1,0 +1,24 @@
+import axios from 'axios';
+import { LS_USER_KEY } from '../contexts/auth-context';
+
+export const http = axios.create({
+  baseURL: import.meta.env.VITE_BASE_API_URL,
+  withCredentials: true
+});
+
+http.interceptors.response.use(
+  (response) => response.data,
+  (error) => {
+    const status = error.status;
+    console.log('PRADO', window.location.pathname);
+    if (status === 401 && !window.location.pathname.includes('/login')) {
+      localStorage.removeItem(LS_USER_KEY);
+      window.location.replace('/login');
+    } else {
+      return Promise.reject(error);
+    }
+  }
+)
+
+export const login = (user) => http.post('/sessions', user)
+
