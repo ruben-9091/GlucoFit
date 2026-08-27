@@ -9,14 +9,12 @@ export const http = axios.create({
 http.interceptors.response.use(
   (response) => response.data,
   (error) => {
-    const status = error.status;
-    console.log('PRADO', window.location.pathname);
+    const status = error.response?.status;
     if (status === 401 && !window.location.pathname.includes('/login')) {
       localStorage.removeItem(LS_USER_KEY);
       window.location.replace('/login');
-    } else {
-      return Promise.reject(error);
     }
+    return Promise.reject(error); // siempre, en ambos casos
   }
 )
 

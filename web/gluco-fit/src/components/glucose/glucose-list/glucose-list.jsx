@@ -10,7 +10,7 @@ function GlucoseList() {
   return (
     <div style={styles.grid}>
       {records.map((record) => (
-        <GlucoseCard key={record._id} record={record} />
+        <GlucoseCard key={record.id} record={record} />
       ))}
     </div>
   );

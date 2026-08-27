@@ -6,7 +6,7 @@ import {
   deleteGlucose,
 } from "../services/glucose-service/glucose-service";
 
-export default function useGlucose() {
+function useGlucose() {
   const [records, setRecords] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -30,12 +30,12 @@ export default function useGlucose() {
 
   async function update(id, payload) {
     const updated = await updateGlucose(id, payload);
-    setRecords((prev) => prev.map((r) => (r._id === id ? updated : r)));
+    setRecords((prev) => prev.map((r) => (r.id === id ? updated : r)));
   }
 
   async function remove(id) {
     await deleteGlucose(id);
-    setRecords((prev) => prev.filter((r) => r._id !== id));
+    setRecords((prev) => prev.filter((r) => r.id !== id));
   }
 
   useEffect(() => {
@@ -55,3 +55,5 @@ export default function useGlucose() {
     reload: load,
   };
 }
+
+export default useGlucose; 
