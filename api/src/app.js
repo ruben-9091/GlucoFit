@@ -4,10 +4,15 @@ const logger = require("./lib/logger");
 const config = require("./lib/config");
 const apiRouter = require("./controllers");
 const session = require("./lib/session");
+const corsMiddleware = require("./lib/cors");
 
 require("./lib/db");
 
 const app = express();
+
+if (config.get("cors.enabled")) {
+  app.use(corsMiddleware);
+}
 
 app.use(loggerHttp({ logger }));
 app.use(express.json());

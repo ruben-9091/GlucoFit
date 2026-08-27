@@ -4,17 +4,21 @@ const User = require("../lib/models/user.model");
 module.exports.register = async (req, res, next) => {
   try {
     const { username } = req.body;
-    let user = User.findOne({ username });
-    if (user) {
+    const existingUsername = await User.findOne({ username });
+    if (existingUsername) {
       next(createHttpError(404, "Username already exists"));
     } else {
-      user = User.create(req.body);
+      const user = await User.create(req.body);
       res.status(201).json(user);
     }
   } catch (error) {
     next(error);
   }
 };
+
+
+
+
 
 module.exports.login = async (req, res, next) => {
   try {

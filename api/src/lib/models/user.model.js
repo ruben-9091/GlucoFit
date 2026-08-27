@@ -68,38 +68,39 @@ userSchema.pre("save", async function () {
   }
 });
 
+
 // ------------------------------------------------------------
 // MÉTODOS DE INSTANCIA
 // ------------------------------------------------------------
-
+ 
 // methods añade funciones personalizadas a CADA documento User.
 // Es decir: cualquier usuario que saques con User.findOne(...)
 // tendrá disponible user.checkPassword(...).
 //
 // Se usa en el login: comparamos la contraseña en texto plano que
 // llega en el body contra el hash guardado en la base de datos.
-//userSchema.methods.checkPassword = function (passwordToCheck) {
-// bcrypt.compare devuelve una Promise<boolean>, por eso se usa
-// normalmente con await: const isValid = await user.checkPassword(pass);
-// return bcrypt.compare(passwordToCheck, this.password);
-//};
-
+userSchema.methods.checkPassword = function (passwordToCheck) {
+  // bcrypt.compare devuelve una Promise<boolean>, por eso se usa
+  // normalmente con await: const isValid = await user.checkPassword(pass);
+  return bcrypt.compare(passwordToCheck, this.password);
+};
+ 
 // ------------------------------------------------------------
 // CAMPOS VIRTUALES (relaciones que no se guardan en la BD)
 // ------------------------------------------------------------
-
+ 
 // Relación virtual: NO se guarda en la base de datos, pero permite
 // rellenar user.glucoseRecords "bajo demanda" usando .populate().
 //
 // Se traduce como: "busca en la colección GlucoseRecord todos los
-// documentos donde el campo owner sea igual al _id de este usuario".
-//userSchema.virtual("glucoseRecords", {
-// ref: "GlucoseRecord", // modelo al que apunta
-// localField: "_id", // campo de ESTE modelo (User._id)
-//foreignField: "owner", // campo del OTRO modelo (GlucoseRecord.owner)
-//justOne: false, // puede haber varios registros -> devuelve un array
-//});
-
+// documentos donde el campo user sea igual al _id de este usuario".
+userSchema.virtual("glucoseRecords", {
+  ref: "Glucose", // modelo al que apunta (tu modelo se llama "Glucose")
+  localField: "_id", // campo de ESTE modelo (User._id)
+  foreignField: "user", // campo del OTRO modelo (Glucose.user)
+  justOne: false, // puede haber varios registros -> devuelve un array
+});
+ 
 // Uso típico:
 // const user = await User.findById(id).populate("glucoseRecords");
 // -> trae el usuario con todos sus controles de glucemia en una sola query.
