@@ -1,11 +1,11 @@
 
-import { AnimatedBackground } from "../../../components/ui/index";
+import { ParticlesBackground } from "../../../components/ui/index";
 
 function PageLayout({ children, className = "" }) {
   return (
     <>
       {/* Fondo animado global */}
-      <AnimatedBackground />
+      <ParticlesBackground />
 
       {/* Contenido de la página */}
       <div className="d-flex flex-column min-vh-100 position-relative" style={{ zIndex: 1 }}>
