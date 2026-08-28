@@ -1,4 +1,4 @@
-import { GlucoseForm, GlucoseList } from "../../components/glucose/index";
+import { GlucoseList } from "../../components/glucose/index";
 import PageLayout from "../../components/layout/page-layout/page-layout";
 
 function GlucosePage() {
@@ -6,9 +6,6 @@ function GlucosePage() {
     <PageLayout>
     <div className="container py-4">
       <h1 className="fw-bold mb-4">Registros de glucemia</h1>
-
-      {/* Formulario para crear nuevo registro */}
-      <GlucoseForm />
 
       {/* Listado de registros existentes */}
       <GlucoseList />
