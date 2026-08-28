@@ -5,7 +5,7 @@ function GlucoseList() {
   const { records, loading, error } = useGlucose();
 
   if (loading) return <p>Cargando...</p>;
-  if (error) return <p>Error al cargar los datos.</p>;
+  if (error) return <p>No existen datos de glucemia en este usuario.</p>;
 
   return (
     <div style={styles.grid}>

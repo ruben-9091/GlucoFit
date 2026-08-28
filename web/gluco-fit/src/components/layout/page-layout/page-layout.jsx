@@ -1,7 +1,7 @@
 
-import { ParticlesBackground } from "../../../components/ui/index";
+import { ParticlesBackground, Jumbotron } from "../../../components/ui/index";
 
-function PageLayout({ children, className = "" }) {
+function PageLayout({ children, jumbotron, className = "" }) {
   return (
     <>
       {/* Fondo animado global */}
@@ -9,7 +9,7 @@ function PageLayout({ children, className = "" }) {
 
       {/* Contenido de la página */}
       <div className="d-flex flex-column min-vh-100 position-relative" style={{ zIndex: 1 }}>
-        
+         {jumbotron && <Jumbotron {...jumbotron} />}
 
         <div className={`container py-3 ${className} flex-grow-1`}>
           {children}

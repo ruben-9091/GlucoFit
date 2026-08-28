@@ -1,11 +1,22 @@
 import { GlucoseList } from "../../components/glucose/index";
 import PageLayout from "../../components/layout/page-layout/page-layout";
+import jumboGlucemia from "../../assets/jumbotron-glucemia.jpg"
 
 function GlucosePage() {
   return (
-    <PageLayout>
+    <PageLayout 
+      jumbotron={{
+          background: jumboGlucemia,
+        }}
+    >
     <div className="container py-4">
-      <h1 className="fw-bold mb-4">Registros de glucemia</h1>
+      <h1 
+  style={{ 
+    color: "#680A0E", 
+    fontFamily: "'Outfit', sans-serif", 
+    fontWeight: 700 
+  }}
+>Registros de glucemia</h1>
 
       {/* Listado de registros existentes */}
       <GlucoseList />

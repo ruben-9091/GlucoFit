@@ -50,7 +50,11 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 className="nav-link text-uppercase text-secondary fw-bold small"
-                style={{ fontFamily: "'Oswald', sans-serif", fontSize: 20 }}
+                style={{ 
+                  fontFamily: "'Oswald', sans-serif", 
+                  fontSize: 20, 
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" 
+                  }}
                 to="/glucose"
               >
                 Mi Glucosa
@@ -60,7 +64,10 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 className="nav-link text-uppercase text-secondary fw-bold small"
-                style={{ fontFamily: "'Oswald', sans-serif", fontSize: 20 }}
+                style={{ 
+                  fontFamily: "'Oswald', sans-serif", 
+                  fontSize: 20,
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
                 to="/diet"
               >
                 Dieta
@@ -70,7 +77,7 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 className="nav-link text-uppercase text-secondary fw-bold small"
-                style={{ fontFamily: "'Oswald', sans-serif", fontSize: 20 }}
+                style={{ fontFamily: "'Oswald', sans-serif", fontSize: 20, textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
                 to="/exercise"
               >
                 Ejercicio
