@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { NavBar } from "./components/ui";
-import { GlucosePage, GlucoseRegister, HomePage } from "./pages";
+import { GlucosePage, GlucoseRegister, HomePage, RegisterPage } from "./pages";
 
 function App() {
   return (
@@ -9,7 +9,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/glucose" element={<GlucosePage/>} />
-        <Route path="/registro" element={<GlucoseRegister/>} />
+        <Route path="/glucose/registro" element={<GlucoseRegister/>} />
+        <Route path="/register" element={<RegisterPage/>} />
+        
       </Routes>
     </>
   );

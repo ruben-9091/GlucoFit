@@ -16,7 +16,4 @@ http.interceptors.response.use(
     }
     return Promise.reject(error); // siempre, en ambos casos
   }
-)
-
-export const login = (user) => http.post('/sessions', user)
-
+); 
