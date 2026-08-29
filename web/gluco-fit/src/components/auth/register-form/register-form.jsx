@@ -120,7 +120,7 @@ function RegisterForm() {
       {serverError && <div className="alert alert-danger">{serverError}</div>}
 
       <div className="d-grid gap-2">
-        <button className="btn btn-primary" type="submit" disabled={!isValid}>
+        <button className="btn bg-warning-subtle text-dark border-warning" type="submit" disabled={!isValid}>
           Register
         </button>
         <hr className="m-0" />
