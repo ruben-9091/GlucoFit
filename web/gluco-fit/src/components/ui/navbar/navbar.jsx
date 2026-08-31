@@ -28,8 +28,8 @@ function NavBar() {
             <div>
               <ul className="navbar-nav flex-row gap-3 d-flex list-unstyled m-0 p-0">
                 <li className="nav-item ">
-                  <i className="bi bi-person-circle fs-5 m-3"></i>
-                  <span className="fw-bold small text-uppercase text-secondary">
+                  <i class="fa-solid fa-id-card-clip fa-float text-secondary m-1"></i>
+                  <span className="m-2 fw-bold small text-uppercase text-secondary">
                     {user.username}
                   </span>
                 </li>
