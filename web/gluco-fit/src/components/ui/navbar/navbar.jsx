@@ -1,8 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import glucoFitLogo from "../../../assets/gluco-fit-logo.png";
-//import { useAuth } from "directorio de auth que cree"
+import { useAuth } from "../../../hooks/use-auth";
 
 function NavBar() {
+  const { user, logout } = useAuth();
   return (
     <>
       {/* Barra superior */}
@@ -23,20 +24,53 @@ function NavBar() {
           </div>
 
           {/* Derecha: login / registro */}
-          <div className="d-flex align-items-center gap-3 text-white">
-            <NavLink
-              className="btn btn-secondary btn-sm fw-semibold"
-              to="/login"
-            >
-              <i className="bi bi-person-circle me-1"></i> Login
-            </NavLink>
-            <NavLink
-              className="btn bg-body-secondary btn-sm fw-semibold"
-              to="/register"
-            >
-              Registro
-            </NavLink>
-          </div>
+          {user ? (
+            <div>
+              <ul className="navbar-nav flex-row gap-3 d-flex list-unstyled m-0 p-0">
+                <li className="nav-item ">
+                  <i className="bi bi-person-circle fs-5 m-3"></i>
+                  <span className="fw-bold small text-uppercase text-secondary">
+                    {user.username}
+                  </span>
+                </li>
+                <li className="nav-item border-start border-secondary ps-3">
+                  <NavLink
+                    to="/"
+                    className="btn btn-link text-secondary p-0 border-0 text-decoration-none shadow-none"
+                    onClick={() => {
+                      logout();
+                    }}
+                    title="Cerrar sesión" // (aparece al pasar el ratón)
+                    style={{ transition: "transform 0.2s ease" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.transform = "scale(1.15)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.transform = "scale(1)")
+                    }
+                  >
+                    {/* Icono de Font Awesome (Sign-out) */}
+                    <i className="bi bi-box-arrow-right fs-5 text-secondary-hover "></i>
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <div className="d-flex align-items-center gap-3 text-white">
+              <NavLink
+                className="btn btn-secondary btn-sm fw-semibold"
+                to="/login"
+              >
+                <i className="bi bi-person-circle me-1"></i> Login
+              </NavLink>
+              <NavLink
+                className="btn bg-body-secondary btn-sm fw-semibold"
+                to="/register"
+              >
+                Registro
+              </NavLink>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -50,11 +84,11 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 className="nav-link text-uppercase text-secondary fw-bold small"
-                style={{ 
-                  fontFamily: "'Oswald', sans-serif", 
-                  fontSize: 20, 
-                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" 
-                  }}
+                style={{
+                  fontFamily: "'Oswald', sans-serif",
+                  fontSize: 20,
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+                }}
                 to="/glucose"
               >
                 Mi Glucosa
@@ -64,10 +98,11 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 className="nav-link text-uppercase text-secondary fw-bold small"
-                style={{ 
-                  fontFamily: "'Oswald', sans-serif", 
+                style={{
+                  fontFamily: "'Oswald', sans-serif",
                   fontSize: 20,
-                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+                }}
                 to="/diet"
               >
                 Dieta
@@ -77,7 +112,11 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 className="nav-link text-uppercase text-secondary fw-bold small"
-                style={{ fontFamily: "'Oswald', sans-serif", fontSize: 20, textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
+                style={{
+                  fontFamily: "'Oswald', sans-serif",
+                  fontSize: 20,
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+                }}
                 to="/exercise"
               >
                 Ejercicio
