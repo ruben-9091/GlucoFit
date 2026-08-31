@@ -7,6 +7,7 @@ function GlucoseCard({ record }) {
       <p>
         <strong>Fecha:</strong> {new Date(record.date).toLocaleDateString()}
       </p>
+      <strong>Momento del dia:</strong> {record.moment}
       {record.notes && (
         <p>
           <strong>Notas:</strong> {record.notes}
