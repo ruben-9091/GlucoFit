@@ -50,7 +50,7 @@ function NavBar() {
                     }
                   >
                     {/* Icono de Font Awesome (Sign-out) */}
-                    <i className="bi bi-box-arrow-right fs-5 text-secondary-hover "></i>
+                    <i class="fa-solid fa-right-from-bracket fa-wag text-secondary"></i>
                   </NavLink>
                 </li>
               </ul>
