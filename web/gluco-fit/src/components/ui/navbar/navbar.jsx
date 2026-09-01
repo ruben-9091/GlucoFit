@@ -103,7 +103,7 @@ function NavBar() {
                   fontSize: 20,
                   textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
                 }}
-                to="/diet"
+                to="/recipes"
               >
                 Dieta
               </NavLink>
