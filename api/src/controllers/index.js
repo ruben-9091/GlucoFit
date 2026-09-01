@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const glucose = require("./glucose.controller");
+const recipe = require("./recipes.controller")
 const user = require("./user.controller");
 const { auth } = require("../middlewares/auth.mid");
 
@@ -17,5 +18,12 @@ router.get("/users/me", user.profile);
 
 router.post("/sessions", user.login);
 router.delete("/sessions", user.logout);
+
+//recipes CRUD
+router.get("/recipes", auth, recipe.list);
+router.post("/recipes", auth, recipe.create);
+router.get("/recipes/:id", auth, recipe.detail);
+router.patch("/recipes/:id", auth, recipe.update);
+router.delete("/recipes/:id", auth, recipe.delete);
 
 module.exports = router;
