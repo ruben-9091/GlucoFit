@@ -26,7 +26,8 @@ export function RecipesListCategory() {
 
         // Filtramos para quedarnos solo con las de esta categoría
         const filteredRecipes = allRecipes.filter(
-          (recipe) => recipe.categoria?.toLowerCase() === categoria?.toLowerCase()
+          (recipe) =>
+            recipe.categoria?.toLowerCase() === categoria?.toLowerCase(),
         );
 
         setRecipes(filteredRecipes);
@@ -43,25 +44,30 @@ export function RecipesListCategory() {
   const tituloMostrar = TITULOS_CATEGORIA[categoria] || categoria;
 
   if (loading) {
-    return <p className="text-center my-5">Cargando recetas de {tituloMostrar}...</p>;
+    return (
+      <p className="text-center my-5">Cargando recetas de {tituloMostrar}...</p>
+    );
   }
 
   return (
     <div className="container my-5">
       {/* Botón para volver al listado general de categorías */}
       <div className="mb-4">
-        <NavLink to="/recipes" className="btn btn-outline-secondary btn-sm">
-        Volver a Categorías
+        <NavLink
+          to="/recipes"
+          className="btn btn-sm text-white"
+          style={{ backgroundColor: "#762024", borderColor: "#0a0505" }}
+        >
+          <strong>Volver a Categorías</strong>
         </NavLink>
       </div>
 
-      <h1 className="mb-4 fw-bold text-capitalize">
-        Recetas: {tituloMostrar}
-      </h1>
+      <h1 className="mb-4 fw-bold text-capitalize">Recetas: {tituloMostrar}</h1>
 
       {recipes.length === 0 ? (
         <div className="alert alert-info text-center" role="alert">
-          No hay recetas registradas para la categoría <strong>{tituloMostrar}</strong>.
+          No hay recetas registradas para la categoría{" "}
+          <strong>{tituloMostrar}</strong>.
         </div>
       ) : (
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
@@ -74,12 +80,10 @@ export function RecipesListCategory() {
                   alt={recipe.nombre}
                   style={{ height: "180px", objectFit: "cover" }}
                 />
-                
+
                 {/* Contenedor principal del cuerpo de la card */}
                 <div className="card-body d-flex flex-column">
-                  <h5 className="card-title fw-bold">
-                    {recipe.nombre}
-                  </h5>
+                  <h5 className="card-title fw-bold">{recipe.nombre}</h5>
 
                   {/* Badges para Tiempo, Dificultad y Calorías */}
                   <div className="d-flex flex-wrap gap-2 my-2">
@@ -103,12 +107,12 @@ export function RecipesListCategory() {
                   <div className="mt-auto pt-3">
                     <NavLink
                       to={`/recipes/${categoria}/${recipe.id}`}
-                      className="btn btn-primary w-100 rounded-3"
+                      className="btn btn-secondary w-100 rounded-3"
                     >
-                      Ver Receta
+                      <strong>Ver detalles de Receta</strong>
                     </NavLink>
                   </div>
-                </div> 
+                </div>
               </div>
             </div>
           ))}
