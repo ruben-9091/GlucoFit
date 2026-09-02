@@ -1,7 +1,8 @@
 import PageLayout from "../../components/layout/page-layout/page-layout";
 import imageMobile from "../../assets/gluco-fit-mobile.png";
 import registerMobile from "../../assets/registro-image.png";
-import jumboImg from "../../assets/Jumbotron.jpg";
+//import jumboImg from "../../assets/Jumbotron.jpg";
+import glucoFitVideo from "../../assets/gluco-fit-video.mp4"
 import glucoFitDescription from "../../assets/gluco-fit-description.png";
 import { Link } from "react-router-dom";
 
@@ -10,7 +11,7 @@ function HomePage() {
     <>
       <PageLayout
         jumbotron={{
-          background: jumboImg,
+          video: glucoFitVideo,
         }}
       >
         {/* Contenedor que empieza SIEMPRE debajo del Jumbotron */}
