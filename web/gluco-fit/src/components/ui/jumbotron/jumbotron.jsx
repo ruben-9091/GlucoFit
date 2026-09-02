@@ -3,7 +3,7 @@ function Jumbotron({ background, video }) {
     <div
       className="jumbotron position-relative overflow-hidden"
       style={{
-        height: "200px",
+        height: "300px",
         backgroundColor: "black",
         ...(background && !video
           ? {
