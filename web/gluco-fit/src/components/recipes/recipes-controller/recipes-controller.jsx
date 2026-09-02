@@ -1,34 +1,62 @@
-import RecipesCategory from "../recipes-category/recipes-category";
+import { RecipesCategory } from "../recipes-category/recipes-category";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import * as RecipesService from "../../../services/recipes-service/recipes-service"; 
+
+import * as RecipesService from "../../../services/recipes-service/recipes-service";
 //implementar loader si da tiempo
 
-
 export function AllRecipesController() {
-    const [recipes, setRecipes] = useState(null); 
-    const { category } = useParams(); 
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(()=> {
-        async function fetchRecipes() {
-            try {
-                const data = await RecipesService.listRecipes(category); 
-                setRecipes(data);
+  useEffect(() => {
+    async function fetchCategories() {
+      try {
+        // Pedimos todas las recetas a la base de datos
+        const recipes = await RecipesService.listRecipes();
 
-            } catch (error) {
-                console.error("No se han encontrado recetas", error)
-            }
-        }
-        fetchRecipes(); 
-    }, [category]); 
+        // Extraemos solo una muestra de cada categoría (dessert, meat, salad, vegan)
+        const categoryMap = {};
+        recipes.forEach((recipe) => {
+          if (!categoryMap[recipe.categoria]) {
+            categoryMap[recipe.categoria] = recipe.imagenUrl;
+          }
+        });
 
-    if (!recipes){
-        return <p>Cargando recetas...</p>; 
-    } else {
-        return (
-            <RecipesCategory/>
-        )
+        // Convertimos el objeto en un array de objetos { categoria, imagenUrl }
+        const categoriesData = Object.keys(categoryMap).map((catKey) => ({
+          categoria: catKey,
+          imagenUrl: categoryMap[catKey],
+        }));
+
+        setCategories(categoriesData);
+      } catch (error) {
+        console.error("Error al cargar las categorías", error);
+      } finally {
+        setLoading(false);
+      }
     }
-}; 
 
-export default AllRecipesController; 
+    fetchCategories();
+  }, []);
+
+  if (loading) {
+    return <p className="text-center my-5">Cargando categorías...</p>;
+  } else {
+    return (
+      <div className="container my-5">
+        <h1 className="mb-4 text-center fw-bold">Categorías de Recetas</h1>
+        <div className="row row-cols-1 row-cols-md-2 g-4">
+          {categories.map((item) => (
+            <RecipesCategory
+              key={item.categoria}
+              categoria={item.categoria}
+              imagenUrl={item.imagenUrl}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
+
+export default AllRecipesController;

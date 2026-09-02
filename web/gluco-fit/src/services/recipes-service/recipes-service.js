@@ -6,7 +6,7 @@ export async function listRecipes(categoria) {
     return data; 
 }; 
 
-export async function getRecipe(id) {
+export async function getRecipeDetail(id) {
     const data = await http.get(`/recipes/${id}`); 
     return data; 
 }; 
