@@ -1,11 +1,12 @@
-import { RecipesCategory } from "../recipes-category/recipes-category";
+import ExerciseCategory from "../exercises-category/exercise-category";
 import { useState, useEffect } from "react";
 
-import * as RecipesService from "../../../services/recipes-service/recipes-service";
+import * as ExerciseService from "../../../services/exercise-service/exercise-service";
 import { NavLink } from "react-router-dom";
+
 //implementar loader si da tiempo
 
-export function AllRecipesController() {
+export function AllExercisesController() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -13,13 +14,13 @@ export function AllRecipesController() {
     async function fetchCategories() {
       try {
         // Pedimos todas las recetas a la base de datos
-        const recipes = await RecipesService.listRecipes();
+        const exercise = await ExerciseService.listExercises();
 
         // Extraemos solo una muestra de cada categoría (dessert, meat, salad, vegan)
         const categoryMap = {};
-        recipes.forEach((recipe) => {
-          if (!categoryMap[recipe.categoria]) {
-            categoryMap[recipe.categoria] = recipe.imagenUrl;
+        exercise.forEach((exercise) => {
+          if (!categoryMap[exercise.categoria]) {
+            categoryMap[exercise.categoria] = exercise.imagenUrl;
           }
         });
 
@@ -45,7 +46,7 @@ export function AllRecipesController() {
   } else {
     return (
       <div className="container my-5">
-        <div className="mb-4">
+      <div className="mb-4">
           <NavLink
             to="/"
             className="btn btn-sm text-white"
@@ -54,10 +55,10 @@ export function AllRecipesController() {
             <strong>Volver a pantalla principal</strong>
           </NavLink>
         </div>
-        <h1 className="mb-4 text-center fw-bold">Categorías de Recetas</h1>
+        <h1 className="mb-4 text-center fw-bold">Entrenamientos</h1>
         <div className="row row-cols-1 row-cols-md-2 g-4">
           {categories.map((item) => (
-            <RecipesCategory
+            <ExerciseCategory
               key={item.categoria}
               categoria={item.categoria}
               imagenUrl={item.imagenUrl}
@@ -69,4 +70,4 @@ export function AllRecipesController() {
   }
 }
 
-export default AllRecipesController;
+export default AllExercisesController;

@@ -6,3 +6,7 @@ export { default as LoginPage } from "./login-page/login-page";
 export { default as RecipesPage } from "./recipes-page/recipes-page/recipes-page"; 
 export { default as RecipesCategoryPage } from "./recipes-page/recipes-category-page/recipes-category-page"; 
 export { default as RecipesDetailPage } from "./recipes-page/recipes-detail-page/recipes-detail-page"; 
+export { default as ExercisesPage } from "./exercises-page/exercises-page/exercises-page"; 
+export { default as ExerciseCategoryPage } from "./exercises-page/exercise-category-page/exercise-category-page"; 
+export { default as ExerciseDetailPage } from "./exercises-page/exercise-detail-page/exercise-detail-page"; 
+

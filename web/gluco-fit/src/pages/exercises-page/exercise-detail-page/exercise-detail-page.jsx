@@ -1,19 +1,17 @@
 import PageLayout from "../../../components/layout/page-layout/page-layout";
+import { ExerciseDetail } from "../../../components/exercises"; 
 import videoRecipes from "../../../assets/video-recipes2.mp4";
-import { RecipeDetail } from "../../../components/recipes/index"
 
-function RecipesDetailPage(){
+function ExerciseDetailPage(){
     return  (
     <PageLayout
       jumbotron={{
         video: videoRecipes,
       }}
     >
-      <RecipeDetail />
+      <ExerciseDetail />
     </PageLayout>
   )
 }
 
-export default RecipesDetailPage; 
-
-
+export default ExerciseDetailPage; 
