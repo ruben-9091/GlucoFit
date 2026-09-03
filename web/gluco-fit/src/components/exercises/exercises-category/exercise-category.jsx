@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export function ExerciseCategory({ categoria, imagenUrl }) {
   // Nombres descriptivos para mostrar en el título de la tarjeta
   const titulos = {
-    running: "Running",
-    gym: "Ejercicios de gym",
+    running: "Cardiovascular",
+    gym: "Fuerza",
     flex: "Flexibilidad",
   };
 

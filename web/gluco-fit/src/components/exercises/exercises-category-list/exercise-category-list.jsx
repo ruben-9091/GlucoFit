@@ -4,8 +4,8 @@ import * as ExerciseService from "../../../services/exercise-service/exercise-se
 
 // Mover el objeto fuera del componente evita recrearlo en cada render
 const TITULOS_CATEGORIA = {
-  running: "Entrenamientos de Running",
-  gym: "Entrenamientos de Gym",
+  running: "Entrenamientos Cardiovasculares",
+  gym: "Entrenamientos de fuerza",
   flex: "Ejercicios de flexibilidad",
  
 };
