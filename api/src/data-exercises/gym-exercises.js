@@ -12,7 +12,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Pecho", "Tríceps", "Hombro"],
       equipamiento: "Barra y Banco",
-      imagenUrl: "https://example.com/images/press-banca.jpg",
+      imagenUrl:
+        "https://www.calistenia.net/wp-content/uploads/2016/10/Press-de-Banca.jpg",
       pasos: [
         "Túmbate en el banco plano con los pies bien apoyados en el suelo.",
         "Agarra la barra con un agarre ligeramente más ancho que los hombros.",
@@ -32,7 +33,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Cuádriceps", "Glúteo"],
       equipamiento: "Barra y Rack",
-      imagenUrl: "https://example.com/images/sentadilla-trasera.jpg",
+      imagenUrl:
+        "https://weriselatam.com/wp-content/uploads/2020/09/Sentadilla-trasera-con-barra.jpg",
       pasos: [
         "Coloca la barra sobre los trapecios y retírala del rack.",
         "Abre los pies a la anchura de los hombros con las puntas ligeramente hacia afuera.",
@@ -52,7 +54,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Isquiotibiales", "Glúteo", "Espalda Baja"],
       equipamiento: "Barra y Discos",
-      imagenUrl: "https://example.com/images/peso-muerto.jpg",
+      imagenUrl:
+        "https://eresdeportista.com/wp-content/uploads/2018/12/peso-muerto-rumano.jpg?auto=webp&quality=60&width=640&crop=16:9",
       pasos: [
         "Párate frente a la barra con las espinillas casi tocándola.",
         "Bisagra de cadera hacia atrás y agarra la barra al ancho de hombros.",
@@ -72,7 +75,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Dorsal Ancho", "Bíceps"],
       equipamiento: "Barra de Dominadas",
-      imagenUrl: "https://example.com/images/dominadas.jpg",
+      imagenUrl:
+        "https://rutinas.net/_optimized/images/ejercicios/dominada-asistida_1920.webp",
       pasos: [
         "Cuélgate de la barra con un agarre prono un poco más ancho que tus hombros.",
         "Lleva los hombros hacia abajo y atrás antes de iniciar la subida.",
@@ -92,7 +96,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Hombros", "Tríceps"],
       equipamiento: "Mancuernas y Banco",
-      imagenUrl: "https://example.com/images/press-militar.jpg",
+      imagenUrl:
+        "https://fitgeneration.es/wp-content/uploads/2023/12/press-militar-4.png",
       pasos: [
         "Siéntate en un banco con respaldo vertical sosteniendo dos mancuernas a la altura de los hombros.",
         "Mantén los codos ligeramente adelantados respecto al torso.",
@@ -112,7 +117,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Espalda Alta", "Dorsal Ancho", "Bíceps"],
       equipamiento: "Barra",
-      imagenUrl: "https://example.com/images/remo-barra.jpg",
+      imagenUrl:
+        "https://www.soypowerlifter.com/wp-content/uploads/2020/12/remo-barra_750.jpg",
       pasos: [
         "Sujeta la barra con agarre prono e inclina el torso a 45 grados doblando la cadera.",
         "Mantén la espalda completamente recta y el core apretado.",
@@ -132,7 +138,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Cuádriceps", "Glúteo", "Isquiotibiales"],
       equipamiento: "Mancuernas",
-      imagenUrl: "https://example.com/images/zancadas.jpg",
+      imagenUrl:
+        "https://cdn0.uncomo.com/es/posts/4/3/4/zancadas_profundas_con_mancuernas_50434_2_orig.jpg",
       pasos: [
         "Párate recto sosteniendo una mancuerna en cada mano a los lados del cuerpo.",
         "Da un paso amplio hacia adelante y baja la rodilla trasera hacia el suelo.",
@@ -152,7 +159,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Tríceps", "Pecho Inferior"],
       equipamiento: "Barras Paralelas",
-      imagenUrl: "https://example.com/images/fondos-paralelas.jpg",
+      imagenUrl:
+        "https://www.themanual.com/tachyon/sites/9/2024/08/muscular-shirtless-man-working-out-outside-doing-chest-dips-on-paralell-bars-shutterstock-e1746296515320.jpg?resize=2500%2C1500",
       pasos: [
         "Sujétate en las barras paralelas extendiendo los brazos y suspendiendo el cuerpo.",
         "Inclina ligeramente el torso hacia adelante para enfocar más en el pecho.",
@@ -172,7 +180,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Bíceps"],
       equipamiento: "Barra Z",
-      imagenUrl: "https://example.com/images/curl-biceps.jpg",
+      imagenUrl:
+        "https://eresdeportista.com/wp-content/uploads/2021/09/curl-barra-z.jpg",
       pasos: [
         "Sostén la barra Z con agarre supino a la anchura de las caderas.",
         "Pega los codos al torso y mantén los hombros inmóviles.",
@@ -192,7 +201,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Glúteo Mayor", "Isquiotibiales"],
       equipamiento: "Barra y Banco",
-      imagenUrl: "https://example.com/images/hip-thrust.jpg",
+      imagenUrl:
+        "https://storage.googleapis.com/uriach--corp-web--pro--fisiocrem-django--resources--df81/images/hip_thrust_con_barra.original.jpg",
       pasos: [
         "Apoya la parte inferior de las escápulas contra el borde de un banco.",
         "Coloca la barra acolchada sobre el pliegue de la cadera con rodillas flectadas a 90 grados.",

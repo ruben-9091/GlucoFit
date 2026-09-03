@@ -12,7 +12,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Isquiotibiales"],
       equipamiento: "Esterilla",
-      imagenUrl: "https://example.com/images/estiramiento-isquios.jpg",
+      imagenUrl:
+        "https://porunavidaactiva.es/wp-content/uploads/2022/01/10.1-shutterstock_629761547-2048x1365.jpg",
       pasos: [
         "Siéntate en la esterilla con una pierna estirada y la otra flexionada tocando el muslo opuesto.",
         "Inhala profundo y, al exhalar, inclina el torso hacia la pierna extendida.",
@@ -32,7 +33,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Cadena Posterior", "Hombros", "Gemelos"],
       equipamiento: "Esterilla",
-      imagenUrl: "https://example.com/images/perro-boca-abajo.jpg",
+      imagenUrl:
+        "https://sofia.yoga/wp-content/uploads/2023/03/perro-boca-abajo-1-1080x675.jpeg",
       pasos: [
         "Comienza en cuatro apoyos sobre la esterilla con las manos bajo los hombros.",
         "Empuja el suelo levanta las rodillas y lleva la cadera hacia arriba y atrás.",
@@ -52,7 +54,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Psoas-Ilíaco", "Flexores de Cadera"],
       equipamiento: "Esterilla",
-      imagenUrl: "https://example.com/images/estiramiento-psoas.jpg",
+      imagenUrl: "https://i.ytimg.com/vi/2kfJTHITa4w/maxresdefault.jpg",
       pasos: [
         "Apoya una rodilla en la esterilla y da un paso adelante con la otra pierna a 90 grados.",
         "Mantén el torso recto y empuja la cadera hacia adelante y hacia abajo.",
@@ -72,7 +74,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Abdomen", "Pectoral"],
       equipamiento: "Esterilla",
-      imagenUrl: "https://example.com/images/cobra.jpg",
+      imagenUrl:
+        "https://bluebamboostudio.com/wp-content/uploads/2022/02/Posturas-esenciales_Cobra-scaled-scaled.jpg",
       pasos: [
         "Túmbate boca abajo en la esterilla con las palmas de las manos apoyadas bajo los hombros.",
         "Presiona los empeines contra el suelo e inhala subiendo el pecho lentamente.",
@@ -92,7 +95,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Pectoral Mayor", "Hombro Anterior"],
       equipamiento: "Marco de Puerta o Pared",
-      imagenUrl: "https://example.com/images/estiramiento-pecho.jpg",
+      imagenUrl:
+        "https://comabien.es/images/ejercicio/estiramientos/pectorales-puerta-alto.jpg",
       pasos: [
         "Colócate de pie en el marco de una puerta y apoya los antebrazos contra el marco a 90 grados.",
         "Da un paso corto hacia adelante con una pierna hasta notar estiramiento en el pecho.",
@@ -112,7 +116,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Columna Vertebral", "Core"],
       equipamiento: "Esterilla",
-      imagenUrl: "https://example.com/images/gato-camello.jpg",
+      imagenUrl:
+        "https://media1.popsugar-assets.com/files/thumbor/Ed_FiTrnwdhWIR1HP7WF4uAK0js/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2021/12/02/674/n/1922729/tmp_tdb0lt_63abb2d201fb98ce_Cat-Cow.jpeg",
       pasos: [
         "Colócate sobre la esterilla en cuatro apoyos.",
         "Inhala arqueando la columna hacia abajo y mirando hacia el techo (Cobra/Vaca).",
@@ -132,7 +137,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Glúteo Medio", "Piramidal", "Caderas"],
       equipamiento: "Esterilla",
-      imagenUrl: "https://example.com/images/paloma.jpg",
+      imagenUrl:
+        "https://cdn.xuanlanyoga.com/wp-content/uploads/2023/08/ardha-kapotasana-media-paloma.jpg",
       pasos: [
         "Desde posición de plancha, lleva la rodilla derecha hacia la muñeca derecha cruzando la pierna.",
         "Extiende la pierna izquierda recta hacia atrás en el suelo.",
@@ -152,7 +158,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Aductores", "Ingle"],
       equipamiento: "Esterilla",
-      imagenUrl: "https://example.com/images/mariposa.jpg",
+      imagenUrl:
+        "https://www.byrdie.com/thmb/C0F9M8SSzPgzY2Nwf1TKNm0b4Mc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/butterflystretches-d763a86589924933bcdb0e44933654bf.jpg",
       pasos: [
         "Siéntate erguido en el suelo juntando las plantas de ambos pies.",
         "Agarra los tobillos y acerca los talones lo más posible a la ingle.",
@@ -172,7 +179,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Tríceps", "Dorsal"],
       equipamiento: "Sin equipamiento",
-      imagenUrl: "https://example.com/images/estiramiento-triceps.jpg",
+      imagenUrl:
+        "https://www.deportesdeciudad.com/wp-content/uploads/2019/10/estiramientos-para-triceps-e1571850654980.jpg",
       pasos: [
         "Eleva un brazo y flexiónalo por detrás de la cabeza intentando tocar la escápula opuesta.",
         "Con la mano contraria toma el codo elevado y tira suavemente hacia la cabeza.",
@@ -192,7 +200,8 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Oblicuos", "Tractor Espinal", "Glúteo"],
       equipamiento: "Esterilla",
-      imagenUrl: "https://example.com/images/torsion-espinal.jpg",
+      imagenUrl:
+        "https://cdn.xuanlanyoga.com/wp-content/uploads/2023/10/postura-ardha-matsyendrasana-yoga.jpg",
       pasos: [
         "Siéntate en la esterilla con las piernas extendidas al frente.",
         "Cruza la pierna derecha sobre la izquierda apoyando la planta del pie derecha en el suelo.",

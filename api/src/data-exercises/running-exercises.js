@@ -12,7 +12,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Piernas", "Core"],
       equipamiento: "Sin equipamiento",
-      imagenUrl: "https://example.com/images/carrera.jpg",
+      imagenUrl: "https://media.istockphoto.com/id/894873142/es/foto/sprinter-despegar-del-bloque-que-comienza-en-la-pista-de-atletismo.jpg?s=2048x2048&w=is&k=20&c=IJ4B3BzLAxrf-yDkS3CW2q811CgfS8-ZViCQuB3F3fQ=",
       pasos: [
         "Adopta una postura erguida mirando unos metros hacia adelante.",
         "Mantén una zancada fluida apoyando el medio pie.",
@@ -32,7 +32,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Cuerpo Entero"],
       equipamiento: "Sin equipamiento",
-      imagenUrl: "https://example.com/images/burpees.jpg",
+      imagenUrl: "https://media.istockphoto.com/id/493913138/es/foto/burpee.jpg?s=2048x2048&w=is&k=20&c=ZOqULc-Tng5J70bnAc8cPatmGdbNEe7PQdzZTgzUOwE=",
       pasos: [
         "Desde posición de pie, haz una sentadilla y apoya las manos en el suelo.",
         "Lanza las piernas hacia atrás de un salto quedando en plancha y haz una flexión.",
@@ -52,7 +52,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Gemelos", "Hombros"],
       equipamiento: "Comba de Salto",
-      imagenUrl: "https://example.com/images/comba.jpg",
+      imagenUrl: "https://media.istockphoto.com/id/2174204066/es/foto/una-joven-en-ropa-deportiva-salta-la-cuerda-en-su-sala-de-estar-durante-un-vigorizante.jpg?s=2048x2048&w=is&k=20&c=LiKlJYmwKxaczixpvhU410x1HuzY_MaQMZtvd0aRjdE=",
       pasos: [
         "Sujeta los mangos de la comba con los codos pegados a las costillas.",
         "Gira las muñecas para hacer pasar la cuerda sobre tu cabeza.",
@@ -72,7 +72,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Core", "Hombros", "Flexores de Cadera"],
       equipamiento: "Sin equipamiento",
-      imagenUrl: "https://example.com/images/mountain-climbers.jpg",
+      imagenUrl: "https://cdn.pixabay.com/photo/2026/03/14/18/30/kyraxys-running-10174041_1280.png",
       pasos: [
         "Colócate en posición de plancha alta con las manos bajo los hombros.",
         "Lleva una rodilla velozmente hacia el pecho sin elevar la cadera.",
@@ -92,7 +92,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Piernas", "Hombros"],
       equipamiento: "Sin equipamiento",
-      imagenUrl: "https://example.com/images/jumping-jacks.jpg",
+      imagenUrl: "https://sworkit.com/wp-content/uploads/2020/06/jumping-jacks-outdoors-2048x1365.jpg",
       pasos: [
         "Párate recto con los pies juntos y los brazos a los costados.",
         "Da un salto abriendo las piernas más allá de la cadera a la vez que aplaudes sobre la cabeza.",
@@ -112,7 +112,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Espalda", "Piernas", "Bíceps"],
       equipamiento: "Máquina de Remo",
-      imagenUrl: "https://example.com/images/remo-ergometro.jpg",
+      imagenUrl: "https://www.hugocross.com.br/wp-content/uploads/2017/01/remo-1024x683.jpg",
       pasos: [
         "Sujeta el agarre con codos extendidos y piernas flexionadas al frente.",
         "Empuja con fuerza las piernas extendiéndolas primero.",
@@ -132,7 +132,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Isquiotibiales", "Glúteo", "Gemelos"],
       equipamiento: "Sin equipamiento",
-      imagenUrl: "https://example.com/images/sprint-cuesta.jpg",
+      imagenUrl: "https://deportesaludable.com/wp-content/uploads/2020/06/sprint-1000x666.jpg",
       pasos: [
         "Busca una pendiente moderada o alta al aire libre.",
         "Spreintea a máxima velocidad pendiente arriba impulsándote con las piernas.",
@@ -152,7 +152,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Cuádriceps", "Isquiotibiales"],
       equipamiento: "Bicicleta Estática",
-      imagenUrl: "https://example.com/images/bici-estatica.jpg",
+      imagenUrl: "https://content21.sabervivirtv.com/medio/2025/03/17/chica-en-bici-estatica_3fb425a4_250317122750_1280x720.webp",
       pasos: [
         "Ajusta el sillín a la altura de la cadera.",
         "Comienza con un pedaleo suave de 5 minutos como calentamiento.",
@@ -172,7 +172,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Hombros", "Core", "Brazos"],
       equipamiento: "Sin equipamiento",
-      imagenUrl: "https://example.com/images/shadow-boxing.jpg",
+      imagenUrl: "https://behappyboxing.com/wp-content/uploads/2025/02/shadow-boxing.jpg",
       pasos: [
         "Adopta guardia de boxeo con rodillas semi-flectadas y puños protegiendo el rostro.",
         "Lanza combinaciones de golpes (jab, cross, croché, uppercut) al aire.",
@@ -192,7 +192,7 @@ module.exports = {
       },
       grupoMuscularPrincipal: ["Cuádriceps", "Glúteos", "Gemelos"],
       equipamiento: "Escaleras o Gradas",
-      imagenUrl: "https://example.com/images/escaleras.jpg",
+      imagenUrl: "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1255233835.jpg?resize=980:*",
       pasos: [
         "Sube un tramo largo de escaleras a ritmo ágil de dos en dos escalones.",
         "Asegúrate de apoyar bien la planta completa del pie en cada peldaño.",
