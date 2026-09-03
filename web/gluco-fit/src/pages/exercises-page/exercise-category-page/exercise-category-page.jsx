@@ -1,19 +1,17 @@
 import PageLayout from "../../../components/layout/page-layout/page-layout";
 import videoRecipes from "../../../assets/video-recipes2.mp4";
-import { RecipeDetail } from "../../../components/recipes/index"
+import { ExerciseCategoryList } from "../../../components/exercises";
 
-function RecipesDetailPage(){
-    return  (
+function ExerciseCategoryPage() {
+  return (
     <PageLayout
       jumbotron={{
         video: videoRecipes,
       }}
     >
-      <RecipeDetail />
+      <ExerciseCategoryList />
     </PageLayout>
-  )
+  );
 }
 
-export default RecipesDetailPage; 
-
-
+export default ExerciseCategoryPage;

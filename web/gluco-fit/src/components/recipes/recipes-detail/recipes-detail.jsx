@@ -55,9 +55,10 @@ export function RecipeDetail() {
       <div className="mb-4">
         <NavLink 
           to={`/recipes/${recipe.categoria}`} 
-          className="btn btn-outline-secondary btn-sm rounded-pill"
+          className="btn btn-sm text-white"
+          style={{ backgroundColor: "#762024", borderColor: "#0a0505" }}
         >
-         Volver a {recipe.categoria}
+         <strong>Volver a página de recetas</strong>
         </NavLink>
       </div>
 
