@@ -58,7 +58,7 @@ function GlucoseCharts({ records }) {
         <MiniChart
           title="Glucosa · media semanal"
           data={glucosaSemanal}
-          color="#c23b4b"
+          color="#642128"
           unit="mg/dL"
           emptyMessage="Aún no hay suficientes registros."
         />
@@ -67,7 +67,7 @@ function GlucoseCharts({ records }) {
         <MiniChart
           title="Glucosa · media mensual"
           data={glucosaMensual}
-          color="#c23b4b"
+          color="#642128"
           unit="mg/dL"
           emptyMessage="Aún no hay suficientes registros."
         />
@@ -76,7 +76,7 @@ function GlucoseCharts({ records }) {
         <MiniChart
           title="Insulina · media semanal"
           data={insulinaSemanal}
-          color="#2b6f5e"
+          color="#6d8043"
           unit="unidades"
           emptyMessage="Sin registros de insulina todavía."
         />
@@ -85,7 +85,7 @@ function GlucoseCharts({ records }) {
         <MiniChart
           title="Insulina · media mensual"
           data={insulinaMensual}
-          color="#2b6f5e"
+          color="#6d8043"
           unit="unidades"
           emptyMessage="Sin registros de insulina todavía."
         />
