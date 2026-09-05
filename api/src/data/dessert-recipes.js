@@ -146,7 +146,7 @@ module.exports = {
         carbohidratosG: 11,
         grasasG: 5
       },
-      imagenUrl: "https://images.unsplash.com/photo-1488900128323-21503983257e",
+      imagenUrl: "https://mandolina.co/wp-content/uploads/2024/04/Helado-de-fresa-1080x550-1.jpg",
       ingredientes: [
         "250g de fresas congeladas",
         "200g de yogur griego natural sin azúcar",

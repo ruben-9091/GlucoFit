@@ -244,7 +244,7 @@ module.exports = {
         grasasG: 36,
       },
       imagenUrl:
-        "https://salchicheros.com/29261-large_default/hamburguesa-ternera-gigante-bandeja-de-6-ud.jpg",
+        "https://img.magnific.com/fotos-premium/hamburguesas-ternera-primer-plano-acompanadas-romero-hechas-parrilla_767123-167.jpg",
       ingredientes: [
         "200g de carne picada de ternera",
         "1 loncha de queso cheddar",
