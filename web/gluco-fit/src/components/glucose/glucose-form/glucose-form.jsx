@@ -1,64 +1,101 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../hooks/use-auth"
-import useGlucose from "../../../hooks/use-glucose"
-
+import useGlucose from "../../../hooks/use-glucose";
 
 function GlucoseForm() {
-    const navigate = useNavigate(); 
-    const { user } = useAuth(); 
-    const { create } = useGlucose(); 
+  const navigate = useNavigate();
+  const { create } = useGlucose();
 
-    const { 
-        register, 
-        handleSubmit, 
-        reset, 
-        formState: { errors, isSubmitting  }} 
-        = useForm({ mode: "all" }); 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors, isSubmitting },
+  } = useForm({ mode: "all" });
 
-    const onSubmit = async (formData) => {
-        try {
-            const payload = {
-                ...formData, 
-                user: user?.id
-            }; 
+  const unidadesInsulina = watch("insulina.unidades");
 
-            await create(payload); 
-            reset(); 
-            navigate("/glucose")
+  const onSubmit = async (formData) => {
+    try {
+      const payload = {
+        value: Number(formData.value),
+        moment: formData.moment,
+        date: formData.date,
+      };
 
-        } catch (error) {
-            console.error("Error creando datos de glucemia", error)
-        }
+      const trimmedNotes = formData.notes?.trim();
+
+      if (trimmedNotes) {
+        payload.notes = trimmedNotes;
+      }
+      if (formData.insulina?.unidades) {
+        payload.insulina = {
+          unidades: Number(formData.insulina.unidades),
+          tipo: formData.insulina.tipo,
+        };
+      }
+
+      await create(payload);
+      reset();
+      navigate("/glucose");
+    } catch (error) {
+      console.error("Error creando datos de glucemia", error);
     }
-    return (
-         <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
-      <h3>Registrar glucemia</h3>
+  };
+  return (
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="card p-4 mx-auto"
+      style={{ maxWidth: 420 }}
+    >
+      <h3 className="mb-3">Registrar glucemia</h3>
 
       {/* VALUE */}
-      <label>
-        Valor (mg/dL)
+      <div className="mb-3">
+        <label className="form-label">Valor (mg/dL)</label>
         <input
           type="number"
           {...register("value", {
             required: "El valor es obligatorio",
             min: { value: 20, message: "El mínimo es 20" },
-            max: { value: 600, message: "El máximo es 600" }
+            max: { value: 600, message: "El máximo es 600" },
           })}
-          style={styles.input}
-          placeholder="Valor"
+          className={`form-control ${errors.value ? "is-invalid" : ""}`}
+          placeholder="Ej. 110"
         />
-      </label>
-      {errors.value && <p style={styles.error}>{errors.value.message}</p>}
+        {errors.value && (
+          <div className="invalid-feedback">{errors.value.message}</div>
+        )}
+      </div>
+      {/* DATE */}
+      <div className="mb-3">
+        <label className="form-label">Fecha y hora</label>
+        <input
+          type="datetime-local"
+          {...register("date", {
+            required: "La fecha es obligatoria",
+            validate: (value) => {
+              const selected = new Date(value);
+              const now = new Date();
+              return selected <= now || "No puedes registrar una fecha futura";
+            },
+          })}
+          className={`form-control ${errors.date ? "is-invalid" : ""}`}
+        />
+        {errors.date && (
+          <div className="invalid-feedback">{errors.date.message}</div>
+        )}
+      </div>
 
       {/* MOMENT */}
-      <label>
-        Momento del día
+      <div className="mb-3">
+        <label className="form-label">Momento del día</label>
         <select
           {...register("moment", {
-            required: "El momento del día es obligatorio"
+            required: "El momento del día es obligatorio",
           })}
-          style={styles.input}
+          className={`form-select ${errors.moment ? "is-invalid" : ""}`}
         >
           <option value="">Selecciona...</option>
           <option value="desayuno">Desayuno</option>
@@ -67,77 +104,88 @@ function GlucoseForm() {
           <option value="merienda">Merienda</option>
           <option value="cena">Cena</option>
         </select>
-      </label>
-      {errors.moment && <p style={styles.error}>{errors.moment.message}</p>}
+        {errors.moment && (
+          <div className="invalid-feedback">{errors.moment.message}</div>
+        )}
+      </div>
+
+      {/* INSULINA (opcional) */}
+      <fieldset className="mb-3 border rounded p-3">
+        <legend className="fs-6 fw-semibold w-auto px-1">
+          Insulina <span className="text-muted fw-normal">(opcional)</span>
+        </legend>
+
+        <div className="mb-2">
+          <label className="form-label">Unidades</label>
+          <input
+            type="number"
+            step="0.5"
+            {...register("insulina.unidades", {
+              min: { value: 0, message: "No puede ser negativo" },
+              max: { value: 100, message: "Revisa el valor, parece muy alto" },
+            })}
+            className={`form-control ${errors.insulina?.unidades ? "is-invalid" : ""}`}
+            placeholder="Ej. 6"
+          />
+          {errors.insulina?.unidades && (
+            <div className="invalid-feedback">
+              {errors.insulina.unidades.message}
+            </div>
+          )}
+        </div>
+
+        <div>
+          <label className="form-label">Tipo</label>
+          <select
+            {...register("insulina.tipo", {
+              // Solo obligatorio SI se han metido unidades.
+              validate: (value) =>
+                !unidadesInsulina || value
+                  ? true
+                  : "Selecciona el tipo de insulina",
+            })}
+            className={`form-select ${errors.insulina?.tipo ? "is-invalid" : ""}`}
+          >
+            <option value="">Selecciona...</option>
+            <option value="rapida">Rápida</option>
+            <option value="lenta">Lenta</option>
+          </select>
+          {errors.insulina?.tipo && (
+            <div className="invalid-feedback">
+              {errors.insulina.tipo.message}
+            </div>
+          )}
+        </div>
+      </fieldset>
 
       {/* NOTES */}
-      <label>
-        Notas (opcional)
+      <div className="mb-3">
+        <label className="form-label">Notas (opcional)</label>
         <textarea
           {...register("notes", {
             minLength: {
               value: 10,
-              message: "Debe tener al menos 10 caracteres"
+              message: "Debe tener al menos 10 caracteres",
             },
             maxLength: {
               value: 200,
-              message: "Debe tener como máximo 200 caracteres"
-            }
+              message: "Debe tener como máximo 200 caracteres",
+            },
           })}
-          style={styles.textarea}
-          placeholder="Escriba su nota"
+          className={`form-control ${errors.notes ? "is-invalid" : ""}`}
+          rows={3}
+          placeholder="Escribe una nota si quieres"
         />
-      </label>
-      {errors.notes && <p style={styles.error}>{errors.notes.message}</p>}
+        {errors.notes && (
+          <div className="invalid-feedback">{errors.notes.message}</div>
+        )}
+      </div>
 
-      <button type="submit" disabled={isSubmitting} style={styles.button}>
+      <button type="submit" disabled={isSubmitting} className="btn btn-danger">
         {isSubmitting ? "Guardando..." : "Guardar registro"}
       </button>
     </form>
   );
 }
 
-const styles = {
-  form: {
-    backgroundColor: "#fff",
-    border: "1px solid #ddd",
-    borderRadius: "8px",
-    padding: "20px",
-    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-    maxWidth: "400px",
-    margin: "20px auto"
-  },
-  input: {
-    display: "block",
-    width: "100%",
-    marginTop: "8px",
-    marginBottom: "16px",
-    padding: "8px",
-    borderRadius: "4px",
-    border: "1px solid #ccc"
-  },
-  textarea: {
-    display: "block",
-    width: "100%",
-    height: "80px",
-    marginTop: "8px",
-    marginBottom: "16px",
-    padding: "8px",
-    borderRadius: "4px",
-    border: "1px solid #ccc"
-  },
-  button: {
-    backgroundColor: "#007bff",
-    color: "#fff",
-    border: "none",
-    padding: "10px 16px",
-    borderRadius: "4px",
-    cursor: "pointer"
-  },
-  error: {
-    color: "red",
-    marginBottom: "10px"
-  }
-};
-
-export default GlucoseForm; 
+export default GlucoseForm;
