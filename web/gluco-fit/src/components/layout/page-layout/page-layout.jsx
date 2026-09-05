@@ -1,5 +1,6 @@
 
 import { ParticlesBackground, Jumbotron } from "../../../components/ui/index";
+import Footer from "../../ui/footer/footer";
 
 function PageLayout({ children, jumbotron, className = "" }) {
   return (
@@ -15,7 +16,7 @@ function PageLayout({ children, jumbotron, className = "" }) {
           {children}
         </div>
 
-      
+      <Footer/>
       </div>
     </>
   );
