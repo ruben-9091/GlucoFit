@@ -58,10 +58,13 @@ module.exports.profile = async (req, res, next) => {
 };
 
 module.exports.logout = async (req, res, next) => {
-  try {
-    req.session.destroy();
+  req.session.destroy((error) => {
+    if (error) {
+      return next(error);
+    }
+    // Además de borrar la sesión del almacén, limpiamos la cookie
+    // del navegador explícitamente, por seguridad extra.
+    res.clearCookie("connect.sid");
     res.status(204).send();
-  } catch (error) {
-    next(error);
-  }
+  });
 };

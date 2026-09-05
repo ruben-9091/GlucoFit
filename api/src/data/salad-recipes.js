@@ -71,7 +71,7 @@ module.exports = {
         grasasG: 25,
       },
       imagenUrl:
-        "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRR1aWXRPqPMMHW44Rezr4f3BJ5QzQgrqwZKcH7gibxoeeUTMKsw6vaSuvCA0sEvgQ9NiWVtbCWrDsAwQ",
+        "https://okdiario.com/img/2016/11/26/receta-de-ensalada-caprese.jpg",
       ingredientes: [
         "Tomates rojos maduros",
         "Mozzarella fresca de búfala",
