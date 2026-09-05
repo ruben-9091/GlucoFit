@@ -4,7 +4,7 @@ const User = require("../lib/models/user.model");
 
 module.exports.list = async (req, res, next) => {
   try {
-    const glucose = await Glucose.find().populate("user");
+    const glucose = await Glucose.find({ user: req.user.id }).populate("user");
     res.status(200).json(glucose);
   } catch (error) {
     next(error);
@@ -40,15 +40,22 @@ module.exports.detail = async (req, res, next) => {
 module.exports.update = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const glucose = await Glucose.findByIdAndUpdate(id, req.body, {
+    const glucose = await Glucose.findById(id);
+
+    if (!glucose) {
+      return next(createHttpErrors(404, "Glucose info not found"));
+    }
+
+    if (glucose.user.toString() !== req.user.id) {
+      return next(createHttpErrors(403, "No tienes permiso para editar este registro"));
+    }
+
+    const updated = await Glucose.findByIdAndUpdate(id, req.body, {
       runValidators: true,
       returnDocument: "after",
-    });
-    if (glucose) {
-      res.status(200).json(glucose);
-    } else {
-      next(createHttpErrors(404, "Glucose info not found"));
-    }
+    }).populate("user");
+
+    res.status(200).json(updated);
   } catch (error) {
     next(error);
   }
@@ -57,12 +64,18 @@ module.exports.update = async (req, res, next) => {
 module.exports.delete = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const glucose = await Glucose.findByIdAndDelete(id);
-    if (glucose) {
-      res.status(204).send();
-    } else {
-      next(createHttpErrors(404, "Glucose info not found"));
+    const glucose = await Glucose.findById(id);
+
+    if (!glucose) {
+      return next(createHttpErrors(404, "Glucose info not found"));
     }
+
+    if (glucose.user.toString() !== req.user.id) {
+      return next(createHttpErrors(403, "No tienes permiso para borrar este registro"));
+    }
+
+    await Glucose.findByIdAndDelete(id);
+    res.status(204).send();
   } catch (error) {
     next(error);
   }
