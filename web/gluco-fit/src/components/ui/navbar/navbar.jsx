@@ -49,7 +49,7 @@ function NavBar() {
                       (e.currentTarget.style.transform = "scale(1)")
                     }
                   >
-                    {/* Icono de Font Awesome (Sign-out) */}
+                    {/*LOG OUT*/}
                     <i class="fa-solid fa-right-from-bracket fa-wag text-secondary"></i>
                   </NavLink>
                 </li>
@@ -81,6 +81,19 @@ function NavBar() {
       >
         <div className="container-fluid justify-content-center">
           <ul className="navbar-nav gap-4">
+            <li className="nav-item">
+              <NavLink
+                className="nav-link text-uppercase text-secondary fw-bold small"
+                style={{
+                  fontFamily: "'Oswald', sans-serif",
+                  fontSize: 20,
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+                }}
+                to="/glucose/registro"
+              >
+                CREAR📝
+              </NavLink>
+            </li>
             <li className="nav-item">
               <NavLink
                 className="nav-link text-uppercase text-secondary fw-bold small"

@@ -181,7 +181,7 @@ function GlucoseForm() {
         )}
       </div>
 
-      <button type="submit" disabled={isSubmitting} className="btn btn-danger">
+      <button type="submit" disabled={isSubmitting} className="btn btn-secondary">
         {isSubmitting ? "Guardando..." : "Guardar registro"}
       </button>
     </form>
