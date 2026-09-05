@@ -18,6 +18,17 @@ const glucoseSchema = new Schema(
       type: Date,
       default: Date.now,
     },
+    insulina: {
+      unidades: {
+        type: Number,
+        min: [0, "Las unidades no pueden ser negativas"],
+        max: [50, "Revisa el valor, parece demasiado alto"],
+      },
+      tipo: {
+        type: String,
+        enum: ["rapida", "lenta"],
+      },
+    },
     notes: {
       type: String,
       minLength: [10, "La nota debe contener al menos 10 caracteres"],
