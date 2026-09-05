@@ -48,7 +48,7 @@ function HomePage() {
                     height: "auto",
                   }}
                 />
-                <Link to="/glucose/registro">
+                <Link to="/register">
                   <img
                     src={imageMobile}
                     alt="image-mobile"

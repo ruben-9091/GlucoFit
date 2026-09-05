@@ -2,8 +2,9 @@
 
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as AuthService from "../../../services/auth-service/auth-service";
+import homePageIcon from "../../../assets/homepage-icon2.png";
 
 function RegisterForm() {
   const [serverError, setServerError] = useState(null);
@@ -120,7 +121,11 @@ function RegisterForm() {
       {serverError && <div className="alert alert-danger">{serverError}</div>}
 
       <div className="d-grid gap-2">
-        <button className="btn bg-warning-subtle text-dark border-warning" type="submit" disabled={!isValid}>
+        <button
+          className="btn bg-warning-subtle text-dark border-warning"
+          type="submit"
+          disabled={!isValid}
+        >
           Register
         </button>
         <hr className="m-0" />
@@ -131,6 +136,17 @@ function RegisterForm() {
         >
           Login
         </button>
+        <hr className="m-0" />
+        <Link to="/" className="d-block mx-auto text-center">
+          <img
+            src={homePageIcon}
+            alt="homepage-icon"
+            style={{
+              maxWidth: "135px",
+              height: "auto",
+            }}
+          />
+        </Link>
       </div>
     </form>
   );

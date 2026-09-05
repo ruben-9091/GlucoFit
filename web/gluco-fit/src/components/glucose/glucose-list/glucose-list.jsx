@@ -1,5 +1,7 @@
 import { GlucoseCard, GlucoseCharts } from "../index";
 import useGlucose from "../../../hooks/use-glucose";
+import { Link } from "react-router-dom";
+import glucosaRegistro from "../../../assets/glucose-register-icon.png"
 
 function GlucoseList() {
   const { records, loading, error } = useGlucose();
@@ -24,6 +26,7 @@ function GlucoseList() {
               ))
             )}
           </div>
+         
         </div>
 
         {/* Derecha: gráficos */}
@@ -31,6 +34,16 @@ function GlucoseList() {
           <h5 className="mb-3">Evolución</h5>
           <GlucoseCharts records={records} />
         </div>
+         <Link to="/glucose/registro" className="text-center">
+          <img 
+            src={glucosaRegistro}
+            alt="glucose-register-logo"
+            style={{
+              maxWidth: "200px",
+              height: "auto",
+            }}
+          />
+          </Link>
       </div>
     </div>
   );
