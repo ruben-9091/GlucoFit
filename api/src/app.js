@@ -1,3 +1,8 @@
+
+// IMPORTANTE: Colocar esto en la LÍNEA 1 de app.js
+if (!globalThis.crypto) {
+  globalThis.crypto = require('node:crypto').webcrypto;
+}
 const express = require("express");
 const loggerHttp = require("pino-http");
 const logger = require("./lib/logger");
