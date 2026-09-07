@@ -1,0 +1,18 @@
+
+
+.modern-title {
+  font-family: "Fraunces", serif;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #63212a, #a29f9e);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.modern-text {
+  font-size: 1.30rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
