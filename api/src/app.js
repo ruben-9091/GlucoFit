@@ -21,6 +21,9 @@ app.use(session);
 
 app.use("/api/v0", apiRouter);
 
-app.listen(config.get("port"), () =>
-  logger.info(`Application listen at port ${config.get("port")}`),
-);
+
+const PORT = process.env.PORT || config.get("port");
+
+app.listen(PORT, () => {
+  logger.info(`Application listening at port ${PORT}`);
+});
