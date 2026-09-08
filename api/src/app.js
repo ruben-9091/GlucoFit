@@ -14,6 +14,7 @@ const corsMiddleware = require("./lib/cors");
 require("./lib/db");
 
 const app = express();
+app.set('trust proxy', 1); 
 
 if (config.get("cors.enabled")) {
   app.use(corsMiddleware);
