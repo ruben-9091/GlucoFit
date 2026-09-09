@@ -6,12 +6,16 @@ module.exports.auth = async (req, res, next) => {
     return next(createHttpError(401, "Session not found"));
   }
 
-  const user = await User.findById(req.session.userId);
+  try {
+    const user = await User.findById(req.session.userId);
 
-  if (!user) {
-    return next(createHttpError(401, "Session user not found"));
+    if (!user) {
+      return next(createHttpError(401, "Session user not found"));
+    }
+
+    req.user = user;
+    next();
+  } catch (err) {
+    next(createHttpError(500, "Auth check failed"));
   }
-
-  req.user = user;
-  next();
 };

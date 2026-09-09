@@ -2,6 +2,22 @@ const config = require("./config");
 const session = require("express-session");
 const MongoStore = require("connect-mongo").MongoStore;
 
+
+const store = MongoStore.create({
+  mongoUrl: process.env.MONGODB_URI,
+});
+
+// Esto es temporal, solo para diagnóstico — nos va a decir en los logs
+// de Fly.io si el store consigue conectar o no, y por qué.
+store.on("error", (error) => {
+  console.error("❌ MongoStore error:", error);
+});
+
+store.on("connected", () => {
+  console.log("✅ MongoStore conectado correctamente a MongoDB");
+});
+
+
 module.exports = session({
   secret: config.get("session.secret"), // firma la cookie
   resave: false, // No vuelvas a guardar la sesión en Mongo si no ha cambiado.
