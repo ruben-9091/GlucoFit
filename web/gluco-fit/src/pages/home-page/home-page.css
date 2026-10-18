@@ -1,11 +1,12 @@
 
 
+/* Título del bloque moderno. Sin degradado propio: lo pinta GradientText
+   (background-clip: text) para poder animarlo. */
 .modern-title {
-  font-family: "Fraunces", serif;
-  font-size: 2.5rem;
-  background: linear-gradient(90deg, #63212a, #a29f9e);
-  -webkit-background-clip: text;
-  color: transparent;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1.15;
   letter-spacing: -0.5px;
 }
 
@@ -14,5 +15,28 @@
   color: #555;
   line-height: 1.7;
   margin-bottom: 1rem;
+}
+
+/* Logo "GlucoFit" reconstruido como texto para poder aplicar GradientText */
+.gf-logo {
+  text-align: left;
+}
+
+.gf-logo__title {
+  display: block;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 4.5rem; /* ≈72px al ancho de 680px del PNG original */
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.gf-logo__subtitle {
+  display: block;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem; /* ≈29px al ancho de 680px del PNG original */
+  line-height: 1.25;
+  margin-top: 0.35rem;
 }
 

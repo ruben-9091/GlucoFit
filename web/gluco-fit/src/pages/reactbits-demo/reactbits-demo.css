@@ -28,12 +28,22 @@
   margin-bottom: 1rem;
 }
 
-/* Lienzo donde se pinta Aurora: necesita altura propia */
+/* Lienzo donde se pinta Aurora/Threads: el hijo es height:100%, así que el
+   padre NECESITA altura definida. Con solo min-height el canvas colapsa a 1px. */
 .rb-demo__stage {
   position: relative;
-  min-height: 320px;
+  height: 320px;
   border-radius: 1rem;
   overflow: hidden;
+}
+
+/* El fondo debe SUPERPONERSE al contenido. Sin esto el contenedor del shader
+   (relative, height:100%) ocupa toda la altura del stage y empuja el contenido
+   fuera, donde overflow:hidden lo recorta. Mismo patrón que aurora-background.css. */
+.rb-demo__stage > .aurora-container,
+.rb-demo__stage > .threads-container {
+  position: absolute;
+  inset: 0;
 }
 
 .rb-demo__stage--light {

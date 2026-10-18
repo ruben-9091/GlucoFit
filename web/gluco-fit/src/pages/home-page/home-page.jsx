@@ -2,12 +2,15 @@ import PageLayout from "../../components/layout/page-layout/page-layout";
 import imageMobile from "../../assets/gluco-fit-mobile.png";
 import registerMobile from "../../assets/registro-image.png";
 import glucoFitVideo from "../../assets/gluco-fit-video.mp4";
-import glucoFitDescription from "../../assets/gluco-fit-description.png";
+import { GradientText } from "../../components/ui";
 import { Link } from "react-router-dom";
 import canalDiabetesImg from "../../assets/canal-diabetes.jpg";
 import seDiabetesImg from "../../assets/sociedad-diabetes.png";
 import sanidadImg from "../../assets/ministerio-sanidad.jpg";
 import "./home-page.css"; // 🔥 Añade este CSS para animaciones y estilos
+
+// Paleta del tema, compartida por los GradientText de la página
+const THEME_STOPS = ["#63212a", "#cd8d27", "#a29f9e"];
 
 function HomePage() {
   return (
@@ -16,28 +19,40 @@ function HomePage() {
         <div className="container py-5" style={{ zIndex: 1 }}>
           <div className="row align-items-start g-4">
             {/* Columna Izquierda */}
-            <div className="col-12 col-lg-7 d-flex flex-column align-items-start">
-              <img
-                src={glucoFitDescription}
-                alt="gluco-fit-description"
-                style={{
-                  maxWidth: "680px",
-                  width: "100%",
-                  height: "auto",
-                }}
-              />
+            <div className="col-12 col-lg-7 d-flex flex-column align-items-start gap-5">
+              <GradientText
+                colors={THEME_STOPS}
+                variant="linear"
+                angle={90}
+                animationSpeed={6}
+                yoyo
+                glow={0.25}
+                style={{ justifyContent: "flex-start" }}
+              >
+                <div className="gf-logo">
+                  <span className="gf-logo__title">GlucoFit</span>
+                  <span className="gf-logo__subtitle">
+                    Tu plataforma de control de salud, glucosa y dieta
+                  </span>
+                </div>
+              </GradientText>
 
               {/* Bloque Moderno */}
               <div className="modern-card mt-4 pe-lg-4 fade-in">
-                <h2
-                  className="modern-title mb-3"
-                  style={{
-                    fontFamily: "'Outfit', sans-serif",
-                    fontSize: "50px",
-                  }}
+                <GradientText
+                  colors={THEME_STOPS}
+                  variant="linear"
+                  angle={90}
+                  animationSpeed={6}
+                  yoyo
+                  glow={0.25}
+                  className="mb-3"
+                  style={{ justifyContent: "flex-start" }}
                 >
-                  Tu salud, tu control, tu bienestar
-                </h2>
+                  <h2 className="modern-title m-0">
+                    Tu salud, tu control, tu bienestar
+                  </h2>
+                </GradientText>
 
                 <p
                   className="modern-text"

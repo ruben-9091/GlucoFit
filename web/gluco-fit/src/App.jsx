@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { AuroraBackground, NavBar } from "./components/ui";
+import {  NavBar, ParticlesBackground, ThreadsBackground } from "./components/ui";
 import { ExerciseCategoryPage, ExerciseDetailPage, ExercisesPage, GlucosePage, GlucoseRegister, HomePage, LoginPage, ReactBitsDemo, RecipesCategoryPage, RecipesDetailPage, RecipesPage, RegisterPage } from "./pages";
 import PrivateRoute from "./guards/private-route";
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       {/* Fondo animado global (una sola instancia para toda la iónses) */}
-      <AuroraBackground />
+      <ThreadsBackground />
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />

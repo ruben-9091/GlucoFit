@@ -1,0 +1,9 @@
+.threads-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  /* Threads escucha pointermove en window: no necesita capturar el ratón */
+  pointer-events: none;
+  /* Antes lo aportaba tsparticles (background.color) */
+  background-color: #fdfbf7;
+}

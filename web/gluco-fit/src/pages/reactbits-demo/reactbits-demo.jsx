@@ -1,5 +1,5 @@
 import PageLayout from "../../components/layout/page-layout/page-layout";
-import { Aurora, GradientText } from "../../components/ui";
+import { Aurora, GradientText, Threads } from "../../components/ui";
 
 import "./reactbits-demo.css";
 
@@ -26,8 +26,9 @@ import { Aurora, GradientText } from "../../components/ui";
 </GradientText>
 
 // 3) Aurora como fondo de una sección
-//    El contenedor padre necesita altura + overflow hidden; Aurora se superpone con position absolute.
-<div className="position-relative rounded-4 overflow-hidden" style={{ minHeight: "320px" }}>
+//    OJO: el padre necesita ALTURA DEFINIDA (height, no min-height), porque
+//    Aurora/Threads son height:100%. Con solo min-height el canvas colapsa a 1px.
+<div className="position-relative rounded-4 overflow-hidden" style={{ height: "320px" }}>
   <Aurora
     colorStops={["#63212a", "#cd8d27", "#a29f9e"]}
     lightMode              // fondo claro (tu caso). Quítalo para fondo oscuro.
@@ -37,6 +38,24 @@ import { Aurora, GradientText } from "../../components/ui";
     height={0.55}
     glow={0.7}
     style={{ position: "absolute", inset: 0 }}
+  />
+  <div className="position-relative p-4" style={{ zIndex: 1 }}>
+    ...tu contenido...
+  </div>
+</div>
+
+// 4) Threads (mismo patrón de altura definida)
+<div className="position-relative rounded-4 overflow-hidden" style={{ height: "360px" }}>
+  <Threads
+    color="#63212a"          // acepta strings CSS o [r,g,b] 0..1
+    accentColor="#cd8d27"
+    lineCount={90}
+    speed={0.6}
+    thickness={0.6}
+    amplitude={1.7}
+    fade={0.12}
+    enableMouseInteraction
+    parting={0.5}
   />
   <div className="position-relative p-4" style={{ zIndex: 1 }}>
     ...tu contenido...
@@ -120,9 +139,60 @@ function ReactBitsDemo() {
           </div>
         </section>
 
-        {/* 4. Snippet */}
+        {/* 4. Threads */}
+        <section className="rb-demo__section">
+          <h2 className="rb-demo__section-title">4. Threads · paleta del tema</h2>
+          <p className="rb-demo__hint">
+            Hebras que se apartan alrededor del cursor. Necesita altura definida en el
+            contenedor (<code>.threads-container</code> es <code>height: 100%</code>).
+          </p>
+          <div className="row g-4">
+            <div className="col-12 col-lg-6">
+              <div className="rb-demo__stage rb-demo__stage--light" style={{ height: "360px" }}>
+                <Threads
+                  color="#63212a"
+                  accentColor="#cd8d27"
+                  lineCount={90}
+                  speed={0.6}
+                  thickness={0.6}
+                  amplitude={1.7}
+                  fade={0.12}
+                  enableMouseInteraction
+                  parting={0.5}
+                />
+                <div className="rb-demo__content d-flex flex-column align-items-center justify-content-center h-100 p-4 text-center">
+                  <GradientText colors={THEME_STOPS} variant="linear" angle={90} animationSpeed={6} yoyo>
+                    <h3 className="rb-demo__title-preview">Threads · claro</h3>
+                  </GradientText>
+                  <p className="mb-0 mt-2 rb-demo__hint">
+                    Mueve el ratón dentro del recuadro: las hebras se apartan
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-lg-6">
+              <div className="rb-demo__stage rb-demo__stage--dark" style={{ height: "360px" }}>
+                <Threads
+                  color="#cd8d27"
+                  accentColor="#a29f9e"
+                  lineCount={90}
+                  speed={0.6}
+                  thickness={0.6}
+                  amplitude={1.7}
+                  enableMouseInteraction
+                  parting={0.5}
+                />
+                <div className="rb-demo__content d-flex flex-column align-items-center justify-content-center h-100 p-4 text-center">
+                  <span className="rb-demo__badge">mismas props · fondo oscuro</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Snippet */}
         <section className="rb-demo__section mb-0">
-          <h2 className="rb-demo__section-title">4. Cópialo a tus páginas</h2>
+          <h2 className="rb-demo__section-title">5. Cópialo a tus páginas</h2>
           <pre className="rb-demo__code">
             <code>{SNIPPET}</code>
           </pre>
