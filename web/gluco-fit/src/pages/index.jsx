@@ -9,4 +9,5 @@ export { default as RecipesDetailPage } from "./recipes-page/recipes-detail-page
 export { default as ExercisesPage } from "./exercises-page/exercises-page/exercises-page"; 
 export { default as ExerciseCategoryPage } from "./exercises-page/exercise-category-page/exercise-category-page"; 
 export { default as ExerciseDetailPage } from "./exercises-page/exercise-detail-page/exercise-detail-page"; 
+export { default as ReactBitsDemo } from "./reactbits-demo/reactbits-demo"; 
 

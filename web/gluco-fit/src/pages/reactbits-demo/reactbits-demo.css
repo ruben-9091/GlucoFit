@@ -1,0 +1,109 @@
+.rb-demo__heading {
+  font-family: "Fraunces", serif;
+  color: #4d171a;
+  margin-bottom: 0.5rem;
+}
+
+.rb-demo__lead {
+  color: #555;
+  max-width: 75ch;
+}
+
+.rb-demo__lead code,
+.rb-demo__hint code {
+  color: #63212a;
+  background-color: rgba(99, 33, 42, 0.08);
+  padding: 0.1em 0.35em;
+  border-radius: 0.3rem;
+}
+
+.rb-demo__section {
+  margin-top: 2.5rem;
+}
+
+.rb-demo__section-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.25rem;
+  color: #4d171a;
+  margin-bottom: 1rem;
+}
+
+/* Lienzo donde se pinta Aurora: necesita altura propia */
+.rb-demo__stage {
+  position: relative;
+  min-height: 320px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.rb-demo__stage--light {
+  background-color: #fdfbf7;
+  border: 1px solid rgba(77, 23, 26, 0.18);
+  box-shadow: 0 10px 30px rgba(77, 23, 26, 0.08);
+}
+
+.rb-demo__stage--dark {
+  background-color: #120a14;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.rb-demo__content {
+  position: relative;
+  z-index: 1;
+}
+
+.rb-demo__title-preview {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.rb-demo__hint {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.rb-demo__badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.rb-demo__variants {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: #fdfbf7;
+  border: 1px solid rgba(77, 23, 26, 0.12);
+}
+
+.rb-demo__variant-label {
+  font-family: "Outfit", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.rb-demo__code {
+  margin: 0;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background-color: #1d1116;
+  color: #f2e9e4;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  max-height: 480px;
+}
+
+.rb-demo__code code {
+  white-space: pre;
+}
